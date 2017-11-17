@@ -12,7 +12,6 @@
   <body>
     <h1> Users </h1>
     <br>
-{% for id in User %}
 <table class="table">
   <thead>
     <tr>
@@ -25,6 +24,7 @@
     </tr>
   </thead>
   <tbody>
+      {% for id in User %}
     <tr>
       <th scope="row">{{id.id}}</th>
       <td>{{id.Firstname}} {{id.Lastname}}</td>
@@ -33,9 +33,9 @@
       <td>{{id.updated_at}}</td>
       <td><a href="/show/{{id.id}}"> Show </a> | <a href="/openEdit/{{User.id}}">Edit</a> | <a href="/delete/{{id.id}}">Delete</a> </td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
-{% endfor %}
 <a href="stuff/createUser"> New User </a>
 
     <!-- Optional JavaScript -->
